@@ -17,6 +17,10 @@
   </p>
 
   <p>
+    <%= form.label :Image%>
+    <%= form.file_field :image, multiple: true%>
+  </p>
+  <p>
     <%= form.submit %>
   </p>
 <% end %>

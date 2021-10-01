@@ -1,2 +1,5 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<h1>Album No <%= @album.id%></h1>
+<p><strong>Owner: </strong> <span><%= @album.owner%></span> </p>
+<p><strong>Album Name: </strong> <span><%= @album.name%></span> </p>
+<p><strong>Album description: </strong> <span><%= @album.description%></span> </p>
+<%= link_to 'Index Page', albums_path%>

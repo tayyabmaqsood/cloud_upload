@@ -1,2 +1,23 @@
-<h1>Albums#new</h1>
-<p>Find me in app/views/albums/new.html.erb</p>
+<h2>Create new album</h2>
+<%= form_with scope: :album, url: {controller: 'albums', action: :create},local: true do |form| %>
+
+  <p>
+    <%= form.label :Owner_Name %><br>
+    <%= form.text_field :owner, placeholder: 'Enter Owner Name' %>
+  </p>
+
+  <p>
+    <%= form.label :Album_Name %><br>
+    <%= form.text_field :name, placeholder: 'Enter Album Name' %>
+  </p>
+
+  <p>
+    <%= form.label :Album_Description %><br>
+    <%= form.text_area :description, placeholder: 'Enter album description' %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+

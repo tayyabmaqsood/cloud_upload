@@ -1,0 +1,21 @@
+---
+development:
+  cloud_name: cloud-storage-test
+  api_key: '526575149228613'
+  api_secret: NORGBrqVAn2uMx1zfCeTc17q-YU
+  enhance_image_tag: true
+  static_file_support: false
+
+production:
+  cloud_name: cloud-storage-test
+  api_key: '526575149228613'
+  api_secret: NORGBrqVAn2uMx1zfCeTc17q-YU
+  enhance_image_tag: true
+  static_file_support: true
+
+test:
+  cloud_name: cloud-storage-test
+  api_key: '526575149228613'
+  api_secret: NORGBrqVAn2uMx1zfCeTc17q-YU
+  enhance_image_tag: true
+  static_file_support: false

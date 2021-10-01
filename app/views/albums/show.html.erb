@@ -3,8 +3,8 @@
 <p><strong>Album Name: </strong> <span><%= @album.name%></span> </p>
 <p><strong>Album description: </strong> <span><%= @album.description%></span> </p>
 <%if @album.image.attached?%>
-  <%@album.image.each do |image|%>
-    <%= image_tag(image)%>
-  <% end %>
+      <%= cl_image_tag @album.image.key, :width=>150, :crop=>"fill" %>
+
+  <%=image_tag(@album.image)%>
 <% end %>
 <%= link_to 'Index Page', albums_path%>

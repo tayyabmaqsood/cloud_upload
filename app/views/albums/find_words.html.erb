@@ -20,6 +20,10 @@
     <% end %>
 
     <td><%= link_to 'Show', album%></td>
+        <%album.image.any? do |img|%>
+          <td><%= link_to 'Download',download_image_path(img.key)%></td>
+        <% end %>
+
   <tr>
   <% end %>
 </table>

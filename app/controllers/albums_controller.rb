@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+  require 'open-uri'
   def index
     @albums = Album.all
   end
@@ -18,6 +19,13 @@ class AlbumsController < ApplicationController
 
   def find_words
     @albums = Album.all.where(owner: 'alif')
+  end
+
+  def download_image
+    url = 'https://res.cloudinary.com/cloud-storage-test/image/upload/' + params[:image_url].to_s
+    data = open(url).read
+    send_data data, :disposition => 'image', :filename=>"photo.jpg"
+
   end
 
   def show

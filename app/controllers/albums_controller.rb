@@ -16,6 +16,10 @@ class AlbumsController < ApplicationController
     end
   end
 
+  def find_words
+    @albums = Album.all.where(owner: 'alif')
+  end
+
   def show
     @album = Album.find(params[:id])
   end
@@ -26,9 +30,11 @@ class AlbumsController < ApplicationController
     redirect_to albums_path
   end
 
+
+
   private
 
   def album_params
-    params.require(:album).permit(:name, :description,:owner,image:[])
+    params.require(:album).permit(:name, :description, :owner, image:[])
   end
 end

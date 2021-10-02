@@ -5,6 +5,7 @@
     <th>Owner</th>
     <th>Name</th>
     <th>description</th>
+    <th>image</th>
   <tr>
 <% @albums.each_with_index do |album,index|%>
   <tr>
@@ -12,13 +13,15 @@
     <td><%= album.owner%></td>
     <td><%= album.name%></td>
     <td><%= album.description%></td>
+    <% if album.image.attached?%>
+        <%album.image.any? do |img|%>
+          <%= cl_image_tag img.key, :width=>150, :crop=>"fill" %>
+        <% end %>
+    <% end %>
+
     <td><%= link_to 'Show', album%></td>
-    <td><%= link_to 'Destroy', album_path(album),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
   <tr>
   <% end %>
 </table>
 <%= link_to 'Create a new album', new_album_path%>
-<%= link_to 'All words', get_words_list_path %>
 
